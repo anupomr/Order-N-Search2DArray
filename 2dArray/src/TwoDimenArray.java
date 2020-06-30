@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 /**
  * @author Anupom Roy 
- *
+ * For java Doc => Alt+Shift+J
+ * Add a Javadoc comment to the active field/method/class. 
+ * 
  */
 
 public class TwoDimenArray {
