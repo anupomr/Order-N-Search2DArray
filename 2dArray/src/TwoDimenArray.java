@@ -19,15 +19,30 @@ public class TwoDimenArray {
 		int mainMenuOption = 0; // declare and init a mainMenu option
 		String latTwoChar = stdNumber.substring(stdNumber.length() - 2);
 		int magicNumber = Integer.parseInt(latTwoChar);
-		int headernumber =0;
-		headernumber = (magicNumber + 40) > 60 ? headernumber = 60 : headernumber + 40;
+		int headernumber =magicNumber + 40;
+		
 		headerBar(headernumber);
 		headerText();
 		headerBar(headernumber);
 
 		mainMenuOption = mainMenuText();
 		
-		
+		// Validate main menu selection 
+		while(!(mainMenuOption==1 || mainMenuOption==2)) {
+			System.out.println("Invalid menu selection! Try again.");
+			mainMenuOption = mainMenuText();
+		}
+		switch(mainMenuOption) {
+		case 1:
+			// TODO CODE
+			break;
+		case 2:
+			//TODO CODE
+			break;
+		default:
+				System.out.println("Somthing weird happend.. exiting program.");
+				System.exit(mainMenuOption);
+		}
 		
 	} //End Main
 	
