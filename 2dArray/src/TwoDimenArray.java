@@ -1,7 +1,10 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /**
  * @author Anupom Roy 
+ * Title: Ordering, Searching, and Calculations on Arrays of Numbers
+ * 
  * For java Doc => Alt+Shift+J
  * Add a Javadoc comment to the active field/method/class. 
  * 
@@ -32,12 +35,20 @@ public class TwoDimenArray {
 			System.out.println("Invalid menu selection! Try again.");
 			mainMenuOption = mainMenuText();
 		}
+		// Create and populate the 2D-array
+		int rowLenArray=promptNumArray();
+		int colLenArray=promptArrayLength();
+		int [][] my2DArray= new int[rowLenArray][colLenArray];
 		switch(mainMenuOption) {
 		case 1:
-			// TODO CODE
+			// TODO CODE: code that manually populates the array values by prompting the
+			// user to input the values
+			
 			break;
 		case 2:
-			//TODO CODE
+			// TODO CODE: code that automatically populates the array elements with random
+			// values in the range of 0 to 100 inclusive
+			autoPopulated(my2DArray);
 			break;
 		default:
 				System.out.println("Somthing weird happend.. exiting program.");
@@ -46,7 +57,52 @@ public class TwoDimenArray {
 		
 	} //End Main
 	
+	/**
+	 * This method will auto populated a 2d-array
+	 * @param tdArray
+	 */
+	public static void autoPopulated(int[][] tdArray) {
+		for (int i = 0; i < tdArray.length; i++) {
+			for (int j = 0; j < tdArray[i].length; j++) {
+				tdArray[i][j]= new Random().nextInt();
+			}
+		}
+
+	}	
 	
+	/**
+	 *  This method prompts the user for the number of 1D-arrays to create
+	 * 
+	 * @param void
+	 * @return integer 
+	 */
+	public static int promptNumArray() {
+		// TODO 
+		System.out.println("Enter the number of 1D-array to create: ");
+		int value = userInput.nextInt();
+		System.out.println();// advance to the next line to keep things pretty
+		return value;
+	}
+	/**
+	 * This method prompts the user for the fixed length of the 1D-array to create.
+	 * 
+	 * @param void
+	 * @return integer 
+	 */
+	public static int promptArrayLength() {
+		// TODO 
+		System.out.println("Enter the number of elements each 1D-array should have: ");
+		int value = userInput.nextInt();
+		System.out.println();// advance to the next line to keep things pretty
+		return value;
+
+	}
+	/**
+	 *  * This method prints the required menu text to the console
+	 * 
+	 * @param void
+	 * @return integer value - the main menu option requested
+	 */
 	public static int mainMenuText() {
 		System.out.println("\n Select a menu option : \n"
 				+"\t1 - Manually create arrays for processing\n"
