@@ -51,6 +51,9 @@ public class TwoDimenArray {
 			// values in the range of 0 to 100 inclusive
 			autoPopulated(my2DArray);
 			pretty2DArray(my2DArray);
+			int [][] newSA=bubbleSort(my2DArray);
+			
+			pretty2DArray(newSA);
 			break;
 		default:
 				System.out.println("Somthing weird happend.. exiting program.");
@@ -59,6 +62,20 @@ public class TwoDimenArray {
 		
 	} //End Main
 
+	public static int[][] bubbleSort(int[][] tdArray){
+		for (int i = 0; i < tdArray.length; i++) {
+			for (int j = 0; j < tdArray[i].length; j++) {
+				for (int j2 = 0; j2 < tdArray[i].length-j-1; j2++) {
+					if(tdArray[i][j2]> tdArray[i][j2+1]) {
+						int temp= tdArray[i][j2];
+						tdArray[i][j2]=tdArray[i][j2+1];
+						tdArray[i][j2+1]=temp;
+					}
+				}
+			}
+		}
+		return tdArray;
+	}
 	/**
 	 * This method prints out the 2D-array in a nice table
 	 * @param arrayRefVar
