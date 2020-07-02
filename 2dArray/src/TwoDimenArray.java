@@ -44,11 +44,13 @@ public class TwoDimenArray {
 			// TODO CODE: code that manually populates the array values by prompting the
 			// user to input the values
 			menuallyPopulated(my2DArray);
+			pretty2DArray(my2DArray);
 			break;
 		case 2:
 			// TODO CODE: code that automatically populates the array elements with random
 			// values in the range of 0 to 100 inclusive
 			autoPopulated(my2DArray);
+			pretty2DArray(my2DArray);
 			break;
 		default:
 				System.out.println("Somthing weird happend.. exiting program.");
@@ -57,7 +59,22 @@ public class TwoDimenArray {
 		
 	} //End Main
 
-	
+	/**
+	 * This method prints out the 2D-array in a nice table
+	 * @param arrayRefVar
+	 */
+	private static void pretty2DArray(int[][]arrayRefVar) {
+		System.out.printf(" My2D Array has %d row with %d elements in each row\n", arrayRefVar.length,
+				arrayRefVar[0].length);
+		System.out.println("The 2D array values are: \n");
+		for (int i = 0; i < arrayRefVar.length; i++) {
+			for (int j = 0; j < arrayRefVar[i].length; j++) {
+				System.out.printf("%4d",arrayRefVar[i][j]);
+			}
+			System.out.println();
+		}
+
+	}
 	
 	/**
 	 * @param tdArray
@@ -81,7 +98,7 @@ public class TwoDimenArray {
 	public static void autoPopulated(int[][] tdArray) {
 		for (int i = 0; i < tdArray.length; i++) {
 			for (int j = 0; j < tdArray[i].length; j++) {
-				tdArray[i][j]= new Random().nextInt();
+				tdArray[i][j]= new Random().nextInt(100);
 			}
 		}
 
