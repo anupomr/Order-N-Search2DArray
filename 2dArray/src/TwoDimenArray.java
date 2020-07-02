@@ -43,7 +43,7 @@ public class TwoDimenArray {
 		case 1:
 			// TODO CODE: code that manually populates the array values by prompting the
 			// user to input the values
-			
+			menuallyPopulated(my2DArray);
 			break;
 		case 2:
 			// TODO CODE: code that automatically populates the array elements with random
@@ -56,6 +56,23 @@ public class TwoDimenArray {
 		}
 		
 	} //End Main
+
+	
+	
+	/**
+	 * @param tdArray
+	 */
+	public static void menuallyPopulated(int[][] tdArray) {
+		// TODO 
+		for (int i = 0; i < tdArray.length; i++) {
+			for (int j = 0; j < tdArray[i].length; j++) {
+				System.out.println("Enter a new number");
+				tdArray[i][j]=userInput.nextInt();
+			}
+		}
+		
+
+	}
 	
 	/**
 	 * This method will auto populated a 2d-array
